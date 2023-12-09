@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 from const import *
-import requests
 
 app = Flask(__name__)
 service_registry = {}
@@ -35,10 +34,6 @@ def unregister():
         return jsonify(), 204
     else:
         return jsonify({'error': f'Service {service_name} not found'}), 404
-    
-def get_ip():
-    response = requests.get('https://httpbin.org/get')
-    return response.json()['origin']
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=PORT)
