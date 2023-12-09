@@ -41,4 +41,4 @@ def get_ip():
     return response.json()['origin']
 
 if __name__ == '__main__':
-    app.run(host=get_ip(), port=PORT)
+    app.run(host='54.197.227.5', port=PORT)
